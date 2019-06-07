@@ -11,22 +11,35 @@
     padding: 0;
     margin: 0;
   }
+    
   .container {
+    opacity: 0;
+    display: none;
     width: 100vw;
     height: 100vh;
     background-color: #f4f4f4;
     color: #252525;
+    
+    transition: opacity 0.8s;
+    -webkit-transition: opacity 0.8s;
   }
+  .container.active {
+    opacity: 1.0;
+    display: block;
+  }
+    
   .d-flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+    
   .hello-world {
     width: 100%;
     height: 40%;
     letter-spacing: 1.5px;
   }
+    
   .we-are {
     width: 100%;
     height: 60%;
@@ -45,8 +58,9 @@
   }
   </style>
 </head>
+
 <body>
-  <div class="container">
+  <div id="view" class="container">
     <div class="hello-world d-flex-center">
     🦉 🥳 "Hello, world." 🤗 🦔
     </div>
@@ -54,5 +68,10 @@
     We are <a class="sequrial" href="https://www.sequrial.net"><h1>Securial</h1></a>.
     </div>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('view').classList.add('active');
+    });
+  </script>
 </body>
 </html>
