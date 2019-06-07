@@ -15,26 +15,27 @@
   }
     
   .container {
-    opacity: 0;
-    display: none;
     width: 100vw;
     height: 100vh;
     padding: 3em 0;
     background-color: #f4f4f4;
     color: #252525;
     
-    transition: opacity 2.7s ease-in-out;
-    -webkit-transition: opacity 2.7s ease-in-out;
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+    -ms-animation: fadein 2s;
   }
-  .container.active {
-    opacity: 1.0;
-    display: block;
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
-    
-  .d-flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
     
   .hello-world {
@@ -56,23 +57,26 @@
   }
   .sequrial h1 {
     display: inline;
-    font-size: 1.4rem;
+    padding: auto 1.0rem;
+    font-size: 1.2rem;
   }
   </style>
 </head>
 
 <body>
-  <div id="view" class="container">
+  <div class="container">
     <div class="hello-world d-flex-center">
     🦉 🥳 "Hello, world." 🤗 🦔
     </div>
     <div class="we-are d-flex-center">
-    We are <a class="sequrial" href="https://www.sequrial.net"><h1>Securial</h1></a>.
+    We are <a class="sequrial"><h1>Securial</h1></a>.
     </div>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('view').classList.add('active');
+      setTimeout(function() { 
+        document.getElementByClassNames('sequrial')[0].href = 'https://www.sequrial.net';
+      }, 3000);
     });
   </script>
 </body>
