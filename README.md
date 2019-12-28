@@ -1,1 +1,1 @@
-Hello. Sequrial Github Page is [here](https://sequrial.github.io)!
+Hello. Sequrial Github Page is [here](https://scqrnet.github.io)!
